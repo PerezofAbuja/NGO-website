@@ -2,7 +2,7 @@
 const blogPosts = [
   {
     title: "Impact of Education Programs",
-    image: "blog1.jpg",
+    image: "img/project/IBW-fb9.jpg",
     summary: "Discover how our education projects are transforming communities and empowering youth.",
     link: "#"
   },

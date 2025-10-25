@@ -26,3 +26,31 @@
       }
     });
   });
+
+  // meet the team modal functionality
+  // Open team modal
+  document.querySelectorAll('.team-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const modalId = this.getAttribute('data-modal');
+      document.getElementById(modalId).style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close modal on 'x'
+  document.querySelectorAll('.team-modal .close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', function() {
+      this.closest('.team-modal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+  });
+
+  // Optional: close if clicked outside modal content
+  window.addEventListener('click', function(e) {
+    document.querySelectorAll('.team-modal').forEach(modal => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+  });
