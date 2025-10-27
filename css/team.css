@@ -1,0 +1,108 @@
+
+    :root {
+      --bg: #0a2f1a;        /* Dark green background base */
+      --card: #0d3d28;      /* Slightly lighter green for cards */
+      --muted: #a3d9b1;     /* Muted green for secondary text */
+      --accent: #38b000;    /* Bright green accent */
+      --glass: rgba(255, 255, 255, 0.04); /* Transparent effect for glass elements */
+      --radius: 14px;
+      --gap: 18px;
+      --maxw: 1200px;
+      --ease: cubic-bezier(.2,.9,.3,1);
+      --shadow: 0 8px 24px rgba(2, 6, 23, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, #072813 0%, #0a2f1a 100%);
+      color: #e6f8e6;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .profile-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 400px;
+      width: 90%;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--glass);
+      border-radius: inherit;
+      z-index: 0;
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 12px rgba(56, 176, 0, 0.3);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-name {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-title {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-bio {
+      color: var(--muted);
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-links a {
+      color: var(--muted);
+      transition: color 0.3s var(--ease);
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
